@@ -1,5 +1,6 @@
+import { Layer } from './Layer/index';
+import { Drink } from './Drink/index';
 import './style.css';
-//import './Layer/index';
 
 //console.log('funguju');
 
@@ -43,5 +44,67 @@ orderBtnElm.addEventListener('click', () => {
     ordered = false;
   }
 });
+console.log('funguju-po 4!!');
+// 5) Ingredience jako komponenty
+// dělá to samé, co 6
+const drinkInfoElm = document.querySelector('#drink__info');
 
-// Ingredience jako komponenty
+/* drinkInfoElm.innerHTML +=
+  Layer({
+    color: '#feeeca',
+    label: 'mléčná pěna',
+  }) +
+  Layer({
+    color: '#fed7b0',
+    label: 'teplé mléko',
+  }) +
+  Layer({
+    color: '#613916',
+    label: 'espresso',
+  });
+ */
+
+// 6) Seznam ingrediencí
+
+const layers = [
+  {
+    color: '#feeeca',
+    label: 'mléčná pěna',
+  },
+  {
+    color: '#fed7b0',
+    label: 'teplé mléko',
+  },
+  {
+    color: '#613916',
+    label: 'espresso',
+  },
+];
+
+//console.log(layers);
+
+layers.forEach((layer) => {
+  drinkInfoElm.innerHTML += Layer(layer);
+});
+
+console.log('funguju-po 6!!');
+
+// 7) Nápoj
+// viz. komponenta Drink v samostatném adresáři
+document.querySelector('.drinks-list').append(
+  Drink({
+    id: 'romano',
+    name: 'Romano',
+    ordered: false,
+    layers: [
+      {
+        color: '#fbdf5b',
+        label: 'citrón',
+      },
+      {
+        color: '#613916',
+        label: 'espresso',
+      },
+    ],
+  }),
+);
