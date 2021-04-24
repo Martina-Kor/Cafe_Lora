@@ -262,10 +262,8 @@ nav a:hover {
     max-width: 960px;
   }
 
-  .banner {
-    height: 600px;
-
-    background-position: top left;
+  .nav-btn {
+    display: none;
   }
 
   .navigation {
